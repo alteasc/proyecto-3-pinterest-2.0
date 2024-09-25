@@ -1,0 +1,107 @@
+.logo {
+  width: 45px;
+  cursor: pointer;
+}
+
+div > img {
+  width: 30px;
+}
+
+nav {
+  margin-top: 20px;
+}
+
+#menu-header {
+  justify-content: space-around;
+}
+
+#menu-list {
+  gap: 15px;
+}
+
+#menu-list > li {
+  background-color: var(--secondary);
+  padding: 10px 40px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+#menu-list > li:hover {
+  background-color: var(--primary);
+  color: var(--color-background);
+}
+
+#search {
+  background-color: var(--secondary);
+  width: 40%;
+  border-radius: 50px;
+}
+
+#input-search {
+  background-color: var(--secondary);
+  width: 80%;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 50px;
+  outline: none;
+}
+
+#search > button {
+  background-color: var(--logo);
+  color: var(--secondary);
+  width: 20%;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 50px;
+}
+
+#menu-user {
+  display: flex;
+  gap: 5px;
+}
+
+.menu-hamburguesa {
+  display: none;
+}
+
+@media (max-width: 1070px) {
+  #menu-list {
+    display: none;
+  }
+
+  #search {
+    width: 70%;
+  }
+
+  #menu-user {
+    display: none;
+  }
+
+  .menu-hamburguesa {
+    display: block;
+  }
+}
+
+@media (max-width: 670px) {
+  #search {
+    width: 60%;
+  }
+
+  #input-search {
+    width: 70%;
+  }
+
+  #search > button {
+    width: 30%;
+  }
+}
+
+@media (max-width: 430px) {
+  #input-search {
+    width: 60%;
+  }
+
+  #search > button {
+    width: 40%;
+  }
+}

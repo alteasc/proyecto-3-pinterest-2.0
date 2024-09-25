@@ -1,0 +1,14 @@
+#btnload-more {
+  background-color: var(--primary);
+  color: var(--secondary);
+  border: none;
+  padding: 10px 30px;
+  border-radius: 50px;
+}
+
+.load-more {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
