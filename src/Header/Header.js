@@ -1,4 +1,4 @@
-import './header.css'
+import './Header.css'
 
 export const printHeader = () => {
   const header = document.querySelector('header')
