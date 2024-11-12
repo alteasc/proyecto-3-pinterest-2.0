@@ -33,6 +33,7 @@ const galeriaRandom = async () => {
 galeriaRandom()
 
 const printCards = (resultados) => {
+  sectionCards.innerHTML = ''
   for (const resultado of resultados) {
     infoCard(
       resultado.likes,
@@ -47,6 +48,7 @@ const printCards = (resultados) => {
 
 const errorMensaje = () => {
   const divError = document.createElement('div')
+  divError.innerHTML = ''
   divError.classList = 'flex-container'
   divError.id = 'error'
   const pError = document.createElement('p')
@@ -76,23 +78,27 @@ const errorMensaje = () => {
 
 const buscarImagenes = async () => {
   keyword = inputSearch.value
+  //console.log(keyword)
+
   try {
     const response = await fetch(
       `https://api.unsplash.com/search/photos?page=${page}&query=${keyword}&client_id=${clave}`
     )
     const res = await response.json()
     const imagenes = res.results
-    // console.log(imagenes)
+    //console.log(imagenes)
 
     if (imagenes.length) {
       printCards(imagenes)
     } else {
-      sectionCards.innerHTML = ''
+      main.innerHTML = ''
       errorMensaje()
     }
   } catch (error) {
     console.log(error)
   }
+
+  inputSearch.value = ''
 }
 
 formSearch.addEventListener('submit', (e) => {
