@@ -10,6 +10,8 @@ const formSearch = document.querySelector('#search')
 const inputSearch = document.querySelector('#input-search')
 const main = document.querySelector('main')
 const sectionCards = document.querySelector('.cards')
+const divError = document.createElement('div')
+main.appendChild(divError)
 
 let clave = 'lJ2gdGj3JoukPWO_9OS-GVpWB1agZAW673dPaJoleKw'
 
@@ -47,7 +49,6 @@ const printCards = (resultados) => {
 }
 
 const errorMensaje = () => {
-  const divError = document.createElement('div')
   divError.innerHTML = ''
   divError.classList = 'flex-container'
   divError.id = 'error'
@@ -65,7 +66,6 @@ const errorMensaje = () => {
   liSuggest3.textContent = 'Coches'
   liSuggest4.textContent = 'Perros'
 
-  main.appendChild(divError)
   divError.appendChild(pError)
   divError.appendChild(ulCoincidencias)
   ulCoincidencias.appendChild(liSuggest1)
@@ -89,9 +89,10 @@ const buscarImagenes = async () => {
     //console.log(imagenes)
 
     if (imagenes.length) {
+      divError.innerHTML = ''
       printCards(imagenes)
     } else {
-      main.innerHTML = ''
+      divError.innerHTML = ''
       errorMensaje()
     }
   } catch (error) {
